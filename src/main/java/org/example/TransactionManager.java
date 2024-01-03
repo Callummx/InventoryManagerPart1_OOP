@@ -40,15 +40,16 @@ public class TransactionManager {
                 newItemIdFormatted = String.format("%05d", newItemId);
             }
 
-            // scanner object to get user input
             // self-explanatory fields for the user to input data for
             // total value is calculated by multiplying price and quantity
             System.out.print("Enter Item Description: ");
+            // Consume the newline character left in the buffer
+            input.nextLine();
             String description = input.nextLine();
             System.out.print("Enter Unit Price in £: ");
-            double price = input.nextDouble();
+            double price = Double.parseDouble(input.nextLine());
             System.out.print("Enter Current No of items in stock: ");
-            int quantity = input.nextInt();
+            int quantity = Integer.parseInt(input.nextLine());
             double totalValue = price * quantity;
 
             // creates FileWriter to write to the file specified
